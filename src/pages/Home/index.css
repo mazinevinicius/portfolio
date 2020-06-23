@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 110px;
+    text-align: center;
+}
+.container>h1{
+    margin-bottom: 0px;
+}
+.container>picture>img{
+    border-color: #fafafa;
+}
+
+a {
+    padding: 3px;
+    width: 24px;
+    font-size: 1.5em;
+    transition: all 0.3s;
+}
+#verticalDivider, a:hover{
+    color: #4e73df;
+}
+#contactAndJob{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#contactAndJob>h4{
+    margin-right: 15px;
+}
+
+#location{
+    margin-top: 0px;
+}
+hr{
+    width: 300px;
+    border-color: transparent;
+    height: 1px;
+    background-color: #4e73df;
+    border-radius: 90px;
+}
+
+img {
+    border-radius: 100%;
+    max-width:200px;
+    max-height: 200px;
+    border: 3px solid #4e73df;
+    border-color: #4e73df;
+    box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+h1,h4,p,a{
+    color: #fafafa;
+}
+
+#title{
+    font-weight: lighter;
+}
+
+
