@@ -1,0 +1,82 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 80px;
+    text-align: center;
+}
+
+h1,h4,p,a{
+    color: #fafafa;
+}
+
+img {
+    border-radius: 100%;
+    max-width:200px;
+    max-height: 200px;
+    border: 3px solid #4e73df;
+    border-color: #4e73df;
+    box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.container>h1{
+    margin-bottom: 0px;
+}
+
+#title{
+    font-weight: lighter;
+}
+
+hr{
+    width: 300px;
+    border-color: transparent;
+    height: 1px;
+    background-color: #4e73df;
+    border-radius: 90px;
+}
+
+#contactAndJob a:hover{
+    font-size: 1.70em;
+    color: #4e73df;
+}
+
+#verticalDivider{
+    color: #4e73df;
+}
+
+#contactAndJob{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contactAndJob h4{
+    margin-right: 15px;
+}
+
+a {
+    padding: 3px;
+    width: 24px;
+    font-size: 1.5em;
+    transition: all 0.3s;
+}
+
+#location{
+    margin-top: 0px;
+}
+
+#arrow{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#arrow a{
+    transition: 0.3s;
+
+}
+
+#arrow a:hover{
+    font-size: 1.65em;
+    color: #4e73df;
+}
