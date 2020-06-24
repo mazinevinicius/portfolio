@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiArrowRight } from 'react-icons/fi'
 import Loader from 'react-loader-spinner'
 
-import Navbar from '../../components/Navbar'
 import api from '../../services/api'
 
 import './styles.css'
@@ -39,7 +38,6 @@ const Home = () => {
 
     return (
         <>
-            <Navbar />
             <div id="layout" className="container">
                 <div id="card">
                     {loading
