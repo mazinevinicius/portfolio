@@ -1,0 +1,13 @@
+.container{
+    text-align: center;
+}
+
+#title{
+    margin-top: 50px;
+}
+
+#title h1{
+    margin-bottom: 0;
+    color: #4e73df;
+}
+

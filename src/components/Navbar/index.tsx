@@ -9,8 +9,8 @@ const Navbar: React.FC = (props) => {
             <nav>
                 <div>
                     <Link to="/"><small>home</small></Link>
+                    <Link to="/education"><small>formação</small></Link>
                     <Link to=""><small>experiência</small></Link>
-                    <Link to=""><small>formação</small></Link>
                     <Link to=""><small>repositórios</small></Link>
                 </div>
             </nav>

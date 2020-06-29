@@ -25,7 +25,6 @@ const Home = () => {
     const [user, setUser] = useState<User>()
     const [loading, setLoading] = useState(true)
 
-
     useEffect(() => {
         setLoading(true)
         api.get('/users/mazinevinicius').then(response => {
