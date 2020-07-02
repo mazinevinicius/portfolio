@@ -29,7 +29,7 @@ const courses: Courses[] = [
     },
 
     {
-        title: 'Next Level Week',
+        title: 'Next Level Week #1',
         institution: 'Rocketseat',
         date: 'Junho - 2020',
         description: 'Desenvolvimento da aplicação Ecoleta; sistema para encontro de pontos de coleta reciclável.',

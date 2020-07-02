@@ -10,8 +10,8 @@ const Navbar: React.FC = (props) => {
                 <div>
                     <Link to="/"><small>home</small></Link>
                     <Link to="/education"><small>formação</small></Link>
-                    <Link to=""><small>experiência</small></Link>
-                    <Link to=""><small>repositórios</small></Link>
+                    <Link to="/experience"><small>experiência</small></Link>
+                    <Link to="/repositories"><small>repositórios</small></Link>
                 </div>
             </nav>
 
