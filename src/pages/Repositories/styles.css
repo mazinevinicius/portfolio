@@ -1,16 +1,23 @@
+.container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 #vertical-card{
-    background-color: #4e73df;
-    min-height: 180px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
+    flex-direction: column;
+    background-color: #4e73df;
+    min-height: 180px;
     border-bottom: solid 3px #fafafa;
     border-radius: 3px;
     color: #fafafa;
-    flex-direction: column;
     margin-bottom: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 20px;
+    width: 700px;
 }
 #vertical-card h1, h3{
     margin: 3px;
