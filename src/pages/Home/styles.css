@@ -1,9 +1,4 @@
-#layout.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    
 
 #card {
     display: flex;
@@ -11,6 +6,7 @@
     align-items: center;
     flex-direction: column;
     height: 630px;
+    border: 1px tomato;
 }
 
 h1,h4,p,a{

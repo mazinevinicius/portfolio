@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiArrowRight } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiInstagram, FiMail } from 'react-icons/fi'
+import Fade from '@material-ui/core/Fade'
 import Loader from 'react-loader-spinner'
 
 import api from '../../services/api'
@@ -24,6 +24,7 @@ interface User {
 const Home = () => {
     const [user, setUser] = useState<User>()
     const [loading, setLoading] = useState(true)
+    const [checked, setChecked] = useState(false)
 
     useEffect(() => {
         setLoading(true)
@@ -33,6 +34,7 @@ const Home = () => {
         setTimeout(() => {
             setLoading(false)
         }, 1000)
+        setChecked(true)
     }, [])
 
     return (
@@ -42,15 +44,21 @@ const Home = () => {
                     {loading
                         ? (
                             <Loader
-                                type="ThreeDots"
+                                type="Oval"
                                 color="#4e73df"
                                 height={100}
                                 width={100}
                                 timeout={3000}
                             />
+                            
                         )
                         : (
                             <>
+                            <Fade 
+                                in={checked}
+                                {...(checked ? { timeout: 1000 } : {})}
+                            >
+                                <div>
                                 <picture>
                                     <img src={user?.avatar_url} alt="Avatar GitHub" />
                                 </picture>
@@ -61,14 +69,13 @@ const Home = () => {
                                     <h4>{user?.company}</h4>
                                     <h4 id="verticalDivider">|</h4>
                                     <a href={user?.html_url}><FiGithub /></a>
-                                    <a href={user?.blog}><FiLinkedin /></a>
+                                    <a href={'https://'+user?.blog}><FiLinkedin /></a>
                                     <a href="https://www.instagram.com/marquesmazine"><FiInstagram /></a>
                                     <a href="mailto:mazinevinicius@gmail.com"><FiMail /></a>
                                 </div>
                                 <p id="location">{user?.location}</p>
-                                <div id="arrow">
-                                    <Link to="" ><FiArrowRight /></Link>
                                 </div>
+                            </Fade>
                             </>
                         )
                     }

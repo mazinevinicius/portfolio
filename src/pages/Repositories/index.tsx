@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaGithub, FaJs, FaPhp, FaHtml5, FaCss3, FaCode, FaDatabase } from 'react-icons/fa'
 import Loader from 'react-loader-spinner'
+import Fade from '@material-ui/core/Fade'
 import api from '../../services/api'
 
 import './styles.css'
@@ -16,6 +17,7 @@ interface Repository {
 const Repositories = () => {
     const [repositories, setRepositories] = useState<Repository[]>([])
     const [loading, setLoading] = useState<Boolean>(true)
+    const [checked, setChecked] = useState(false)
 
     useEffect(() => {
         setLoading(true)
@@ -25,10 +27,11 @@ const Repositories = () => {
         setTimeout(() => {
             setLoading(false)
         }, 1000)
+        setChecked(true)
     }, [])
 
     function verifyLanguage(language: string) {
-        switch (language){
+        switch (language) {
             case "TypeScript":
                 return <FaJs />;
             case "JavaScript":
@@ -43,7 +46,7 @@ const Repositories = () => {
                 return <FaCss3 />
             default:
                 return <FaCode />
-                
+
         }
     }
 
@@ -58,7 +61,7 @@ const Repositories = () => {
                 {loading
                     ? (
                         <Loader
-                            type="ThreeDots"
+                            type="Oval"
                             color="#4e73df"
                             height={100}
                             width={100}
@@ -68,16 +71,22 @@ const Repositories = () => {
                     : (
                         <>
                             {repositories.map((repository, index) => (
-                                <div
-                                    id="vertical-card"
-                                    key={index.valueOf()}
+                                <Fade
+                                    in={checked}
+                                    {...(checked ? {timeout: 1000} : {})}
                                 >
-                                    <h1>{verifyLanguage(repository.language)}</h1>
-                                    <h3>{repository.name}</h3>
-                                    <small>Linguagem utilizada: {!repository.language ? "Anotações/estudos em .md" : repository.language}</small>
-                                    <p>{repository.description}</p>
-                                    <small id="link-repositorio"><a href={repository.html_url}>{repository.html_url}</a></small>
-                                </div>
+                                    <div
+                                        id="vertical-card"
+                                        key={index.valueOf()}
+                                    >
+                                        <h1>{verifyLanguage(repository.language)}</h1>
+                                        <h3>{repository.name}</h3>
+                                        <small>Linguagem utilizada: {!repository.language ? "Anotações/estudos em .md" : repository.language}</small>
+                                        <p>{repository.description}</p>
+                                        <small id="link-repositorio"><a href={repository.html_url}>{repository.html_url}</a></small>
+                                    </div>
+
+                                </Fade>
                             ))}
                         </>
                     )

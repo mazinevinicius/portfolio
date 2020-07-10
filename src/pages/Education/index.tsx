@@ -22,6 +22,7 @@ const Education = () => {
                             date={course.date}
                             iconStyle={{ background: '#4e73df', color: '#fafafa' }}
                             icon={<course.icon />}
+                            key={index.valueOf()}
                         >
                             <h3 className="vertical-timeline-element-title">{course.title}</h3>
                             <h4 className="vertical-timeline-element-subtitle">{course.institution}</h4>
