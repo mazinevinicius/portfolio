@@ -23,6 +23,7 @@ const Experience = () => {
                             date={experience.date}
                             iconStyle={{ background: '#4e73df', color: '#fafafa' }}
                             icon={<experience.icon />}
+                            key={index.valueOf()}
                         >
                             <h3 className="vertical-timeline-element-title">{experience.office}</h3>
                             <h4 className="vertical-timeline-element-subtitle">{experience.company}</h4>
