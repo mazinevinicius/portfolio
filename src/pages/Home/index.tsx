@@ -40,7 +40,7 @@ const Home = () => {
     return (
         <>
             <div id="layout" className="container">
-                <div id="card">
+                <div className="card">
                     {loading
                         ? (
                             <Loader

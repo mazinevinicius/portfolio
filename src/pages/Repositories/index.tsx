@@ -54,45 +54,46 @@ const Repositories = () => {
     return (
         <>
             <div className="container">
-                <div id="title">
-                    <h1>Repositórios</h1>
-                    <p>Repositórios, trabalhos e estudos publicados no Github <FaGithub /></p>
-                </div>
-                {loading
-                    ? (
-                        <Loader
-                            type="Oval"
-                            color="#4e73df"
-                            height={100}
-                            width={100}
-                            timeout={3000}
-                        />
-                    )
-                    : (
-                        <>
-                            {repositories.map((repository, index) => (
-                                <Fade
-                                    in={checked}
-                                    {...(checked ? {timeout: 1000} : {})}
-                                >
-                                    <div
-                                        id="vertical-card"
-                                        key={index.valueOf()}
+                    <div id="title">
+                        <h1>Repositórios</h1>
+                        <p>Repositórios, trabalhos e estudos publicados no Github <FaGithub /></p>
+                    </div>
+                    {loading
+                        ? (
+                        <div className="card">
+                            <Loader
+                                type="Oval"
+                                color="#4e73df"
+                                height={100}
+                                width={100}
+                                timeout={3000}
+                            />
+                            </div>
+                        )
+                        : (
+                            <>
+                                {repositories.map((repository, index) => (
+                                    <Fade
+                                        in={checked}
+                                        {...(checked ? { timeout: 1000 } : {})}
                                     >
-                                        <h1>{verifyLanguage(repository.language)}</h1>
-                                        <h3>{repository.name}</h3>
-                                        <small>Linguagem utilizada: {!repository.language ? "Anotações/estudos em .md" : repository.language}</small>
-                                        <p>{repository.description}</p>
-                                        <small id="link-repositorio"><a href={repository.html_url}>{repository.html_url}</a></small>
-                                    </div>
+                                        <div
+                                            id="vertical-card"
+                                            key={index.valueOf()}
+                                        >
+                                            <h1>{verifyLanguage(repository.language)}</h1>
+                                            <h3>{repository.name}</h3>
+                                            <small>Linguagem utilizada: {!repository.language ? "Anotações/estudos em .md" : repository.language}</small>
+                                            <p>{repository.description}</p>
+                                            <small id="link-repositorio"><a href={repository.html_url}>{repository.html_url}</a></small>
+                                        </div>
 
-                                </Fade>
-                            ))}
-                        </>
-                    )
+                                    </Fade>
+                                ))}
+                            </>
+                        )
 
-                }
-
+                    }
             </div>
         </>
     )
