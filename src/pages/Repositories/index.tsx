@@ -72,13 +72,14 @@ const Repositories = () => {
                         )
                         : (
                             <>
+                            <div id="repositories-group">
                                 {repositories.map((repository, index) => (
                                     <Fade
                                         in={checked}
                                         {...(checked ? { timeout: 1000 } : {})}
                                     >
                                         <div
-                                            id="vertical-card"
+                                            id="horizontal-card"
                                             key={index.valueOf()}
                                         >
                                             <h1>{verifyLanguage(repository.language)}</h1>
@@ -90,9 +91,9 @@ const Repositories = () => {
 
                                     </Fade>
                                 ))}
+                            </div>
                             </>
                         )
-
                     }
             </div>
         </>

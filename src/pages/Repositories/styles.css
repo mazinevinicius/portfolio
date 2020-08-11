@@ -1,5 +1,5 @@
 
-#vertical-card{
+#horizontal-card{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,16 @@
     padding: 20px;
     width: 700px;
 }
+
+#repositories-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 100px;
+    width: 100%;
+    margin: 60px;
+}
+
 #vertical-card h1, h3{
     margin: 3px;
 }
@@ -20,3 +30,4 @@
 #link-repositorio{
     font-size: 0.7em;
 }
+
